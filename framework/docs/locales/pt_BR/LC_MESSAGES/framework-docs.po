@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flower main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 00:30+0000\n"
+"POT-Creation-Date: 2025-02-05 01:05+0000\n"
 "PO-Revision-Date: 2024-05-25 11:09+0000\n"
 "Last-Translator: Gustavo Bertoli <gubertoli@gmail.com>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../source/contributor-explanation-public-and-private-apis.rst:2
 msgid "Public and private APIs"
@@ -773,12 +773,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/contributor-how-to-install-development-versions.rst:14
+#, python-brace-format
 msgid ""
 "``flwr = { version = \"1.0.0a0\", allow-prereleases = true }`` (without "
 "extras)"
 msgstr ""
 
 #: ../../source/contributor-how-to-install-development-versions.rst:15
+#, python-brace-format
 msgid ""
 "``flwr = { version = \"1.0.0a0\", allow-prereleases = true, extras = "
 "[\"simulation\"] }`` (with extras)"
@@ -791,10 +793,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/contributor-how-to-install-development-versions.rst:20
+#, python-brace-format
 msgid "``flwr = { path = \"../../\", develop = true }`` (without extras)"
 msgstr ""
 
 #: ../../source/contributor-how-to-install-development-versions.rst:21
+#, python-brace-format
 msgid ""
 "``flwr = { path = \"../../\", develop = true, extras = [\"simulation\"] "
 "}`` (with extras)"
@@ -805,12 +809,14 @@ msgid "Install ``flwr`` from a local wheel file via ``pyproject.toml``:"
 msgstr ""
 
 #: ../../source/contributor-how-to-install-development-versions.rst:25
+#, python-brace-format
 msgid ""
 "``flwr = { path = \"../../dist/flwr-1.8.0-py3-none-any.whl\" }`` (without"
 " extras)"
 msgstr ""
 
 #: ../../source/contributor-how-to-install-development-versions.rst:26
+#, python-brace-format
 msgid ""
 "``flwr = { path = \"../../dist/flwr-1.8.0-py3-none-any.whl\", extras = "
 "[\"simulation\"] }`` (with extras)"
@@ -1993,6 +1999,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/contributor-tutorial-contribute-on-github.rst:372
+#, python-brace-format
 msgid ""
 "Where ``<type>`` needs to be in ``{ci, fix, feat, docs, refactor, "
 "break}``, ``<project>`` should be in ``{framework, baselines, datasets, "
@@ -4378,6 +4385,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/explanation-differential-privacy.rst:42
+#, python-brace-format
 msgid ""
 "\\small\n"
 "P[M(D_{1} \\in A)] \\leq e^{\\epsilon} P[M(D_{2} \\in A)] + \\delta"
@@ -6317,6 +6325,7 @@ msgid "VM Networking"
 msgstr ""
 
 #: ../../source/how-to-run-flower-on-azure.rst:86
+#, python-brace-format
 msgid ""
 "During the execution of the Flower application, the server VM "
 "(``SuperLink``) will be responsible to orchestrate the execution of the "
@@ -7539,6 +7548,7 @@ msgid "``flwr = \"^1.0.0\"`` (when using ``start_server`` and ``start_client``)"
 msgstr ""
 
 #: ../../source/how-to-upgrade-to-flower-1.0.rst:37
+#, python-brace-format
 msgid ""
 "``flwr = { version = \"^1.0.0\", extras = [\"simulation\"] }`` (when "
 "using ``start_simulation``)"
@@ -7604,6 +7614,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/how-to-upgrade-to-flower-1.0.rst:69
+#, python-brace-format
 msgid ""
 "Flower 0.19: ``start_server(..., config={\"num_rounds\": 3, "
 "\"round_timeout\": 600.0}, ...)``"
@@ -8908,6 +8919,7 @@ msgid "**Run ID:** Unique identifier for the run."
 msgstr ""
 
 #: ../../flwr ls:1
+#, python-brace-format
 msgid ""
 "**FAB:** Name of the FAB associated with the run (``{FAB_ID} "
 "(v{FAB_VERSION})``)."
@@ -11538,12 +11550,14 @@ msgid "Return -1 on failure."
 msgstr ""
 
 #: flwr.common.EventType.format:1 of
+#, python-brace-format
 msgid ""
 "Return a formatted version of S, using substitutions from args and "
 "kwargs. The substitutions are identified by braces ('{' and '}')."
 msgstr ""
 
 #: flwr.common.EventType.format_map:1 of
+#, python-brace-format
 msgid ""
 "Return a formatted version of S, using substitutions from mapping. The "
 "substitutions are identified by braces ('{' and '}')."
@@ -15222,6 +15236,7 @@ msgid ""
 msgstr ""
 
 #: flwr.server.strategy.fedprox.FedProx:9 of
+#, python-brace-format
 msgid ""
 "\\\\frac{\\\\mu}{2} || w - w^t ||^2\n"
 "\n"
@@ -16932,6 +16947,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/ref-changelog.md:127
+#, python-brace-format
 msgid ""
 "SuperExec has been integrated into SuperLink, enabling SuperLink to "
 "directly manage ServerApp processes (`flwr-serverapp`). The `flwr` CLI "
@@ -21352,6 +21368,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/ref-changelog.md:1228
+#, python-brace-format
 msgid ""
 "Instead of a config dictionary `{\"num_rounds\": 3, \"round_timeout\": "
 "600.0}`, `start_server` and `start_simulation` now expect a configuration"
@@ -22319,6 +22336,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/ref-changelog.md:1513
+#, python-brace-format
 msgid ""
 "Strategy implementations should migrate their `aggregate_fit` and "
 "`aggregate_evaluate` methods to the new return type (e.g., by simply "
@@ -25851,6 +25869,7 @@ msgid "Where's the accuracy?"
 msgstr ""
 
 #: ../../source/tutorial-series-get-started-with-flower-pytorch.ipynb:707
+#, python-brace-format
 msgid ""
 "You may have noticed that all metrics except for ``losses_distributed`` "
 "are empty. Where did the ``{\"accuracy\": float(accuracy)}`` go?"
@@ -26250,7 +26269,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:41
-msgid "|bc27456848e64eab91d9c28ac80836f8|"
+msgid "|dffa8338b96f4efb81d297fcd82a8f36|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:109
@@ -26265,7 +26284,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:53
-msgid "|af7ab090b8ca4a3ea5f91376cf92f169|"
+msgid "|1a012ec4eb1d4ccf987f8f15ab46766b|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:111
@@ -26287,7 +26306,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:67
-msgid "|9081c3b024ae4b729477daa854968460|"
+msgid "|2296a7bc61bd4b8e9549fb6b485e4138|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:113
@@ -26303,7 +26322,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:79
-msgid "|b4783612fdcd4e3590acd2caa9c226a0|"
+msgid "|4e3e89a9a87141c484a25bc481d32167|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:115
@@ -26319,7 +26338,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:91
-msgid "|5d4a7868bf284987b4cb8103d2e853d0|"
+msgid "|b91b03e5ffe24acaa36953487624b319|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:117
@@ -26334,7 +26353,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:103
-msgid "|ac1f30abf656450bbc12430097c8773a|"
+msgid "|0252fae429234f5e8b2c1e20a9a653e4|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:119
@@ -26354,7 +26373,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:138
-msgid "|9e893e9099c04a5fb47ce94203d7b286|"
+msgid "|f37ddaa1063e473cb63063a2abb90b21|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:173
@@ -26369,7 +26388,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:150
-msgid "|bf91fef9dd494fa0bfe3334d71af54d0|"
+msgid "|b52e9969dbc54eb1a528bc644683ebd1|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:175
@@ -26509,7 +26528,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:210
-msgid "|9e783a90144a43b38e7c6a1326318c0a|"
+msgid "|acf113d4a94649dbb59f88bf9a92b0ba|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:307
@@ -26533,7 +26552,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:225
-msgid "|90a2cfd3d470407daef02a61de7f551c|"
+msgid "|767d7ae9410246aab31440fbdeafd29b|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:309
@@ -26557,7 +26576,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:240
-msgid "|a7bbca4dc8f9409c87df77a68dcc85b5|"
+msgid "|d2448ecc443c43859d7e6d98dc99ae86|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:311
@@ -26580,7 +26599,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:255
-msgid "|565ca369f6d0451e8a8abbda9a93bdd8|"
+msgid "|c3e1ab33819f4dddbf0ae55c22141658|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:313
@@ -26618,7 +26637,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:273
-msgid "|c839c0da8e7a4e76ad21c72a5311d2e7|"
+msgid "|51fd3ea0801f4b37aa18e36abd0b8c61|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:315
@@ -26712,7 +26731,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:334
-msgid "|07d4d06f1bf746989510c85dbe96f4e3|"
+msgid "|59f3491be4b349d5b92701e5d7887361|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:340
@@ -39799,5 +39818,47 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "|6347089b6d794100af39cc2f5efc2a1b|"
+#~ msgstr ""
+
+#~ msgid "|bc27456848e64eab91d9c28ac80836f8|"
+#~ msgstr ""
+
+#~ msgid "|af7ab090b8ca4a3ea5f91376cf92f169|"
+#~ msgstr ""
+
+#~ msgid "|9081c3b024ae4b729477daa854968460|"
+#~ msgstr ""
+
+#~ msgid "|b4783612fdcd4e3590acd2caa9c226a0|"
+#~ msgstr ""
+
+#~ msgid "|5d4a7868bf284987b4cb8103d2e853d0|"
+#~ msgstr ""
+
+#~ msgid "|ac1f30abf656450bbc12430097c8773a|"
+#~ msgstr ""
+
+#~ msgid "|9e893e9099c04a5fb47ce94203d7b286|"
+#~ msgstr ""
+
+#~ msgid "|bf91fef9dd494fa0bfe3334d71af54d0|"
+#~ msgstr ""
+
+#~ msgid "|9e783a90144a43b38e7c6a1326318c0a|"
+#~ msgstr ""
+
+#~ msgid "|90a2cfd3d470407daef02a61de7f551c|"
+#~ msgstr ""
+
+#~ msgid "|a7bbca4dc8f9409c87df77a68dcc85b5|"
+#~ msgstr ""
+
+#~ msgid "|565ca369f6d0451e8a8abbda9a93bdd8|"
+#~ msgstr ""
+
+#~ msgid "|c839c0da8e7a4e76ad21c72a5311d2e7|"
+#~ msgstr ""
+
+#~ msgid "|07d4d06f1bf746989510c85dbe96f4e3|"
 #~ msgstr ""
 
