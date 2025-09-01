@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flower Docs\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-21 00:06+0000\n"
+"POT-Creation-Date: 2025-09-01 00:58+0000\n"
 "PO-Revision-Date: 2025-02-05 10:02+0000\n"
 "Last-Translator: lco <Leandro.COLLIER@student.umons.ac.be>\n"
 "Language: fr\n"
@@ -5339,100 +5339,122 @@ msgid ""
 msgstr ""
 
 #: ../../source/explanation-flower-architecture.rst:36
-msgid "A Flower `server` consists of **SuperLink** and ``ServerApp``:"
+msgid ""
+"A Flower *server* is composed of **SuperLink**, **SuperExec**, and "
+"``ServerApp``:"
 msgstr ""
 
 #: ../../source/explanation-flower-architecture.rst:38
 msgid ""
-"**SuperLink**: a long-running process that forwards task instructions to "
+"**SuperLink**: A long-running process that forwards task instructions to "
 "clients (SuperNodes) and receives task results back."
 msgstr ""
 
 #: ../../source/explanation-flower-architecture.rst:40
 msgid ""
-"``ServerApp``: a short-lived process with project-spcific code that "
-"customizes all server-side aspects of federated learning systems (client "
-"selection, client configuration, result aggregation). This is what AI "
-"researchers and AI engineers write when they build Flower apps."
+"**SuperExec**: A long-running process that schedules, launches, and "
+"manages multiple app processes (e.g., ``ServerApp``) on demand by "
+"communicating with the SuperLink. By default, it is started automatically"
+" by the SuperLink."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:45
-msgid "A Flower `client` consists of **SuperNode** and ``ClientApp``:"
-msgstr ""
-
-#: ../../source/explanation-flower-architecture.rst:47
+#: ../../source/explanation-flower-architecture.rst:43
 msgid ""
-"**SuperNode**: a long-running process that connects to the SuperLink, "
-"asks for tasks, executes tasks (for example, \"train this model on your "
-"local data\") and returns task results back to the SuperLink."
+"``ServerApp``: A short-lived app process containing project-specific code"
+" that customizes all server-side aspects of federated learning systems "
+"(client selection, client configuration, result aggregation). This is the"
+" component AI researchers and engineers implement when building Flower "
+"apps."
+msgstr ""
+
+#: ../../source/explanation-flower-architecture.rst:48
+msgid ""
+"A Flower *client* is composed of **SuperNode**, **SuperExec**, and "
+"``ClientApp``:"
 msgstr ""
 
 #: ../../source/explanation-flower-architecture.rst:50
 msgid ""
-"``ClientApp``: a short-lived process with project-specific code that "
-"customizes all client-side aspects of federated learning systems (local "
-"model training and evaluation, pre- and post-processing). This is what AI"
-" researchers and AI engineers write when they build Flower apps."
+"**SuperNode**: A long-running process that connects to the SuperLink, "
+"requests tasks, executes them (for example, \"train this model on your "
+"local data\"), and returns the results to the SuperLink."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:55
+#: ../../source/explanation-flower-architecture.rst:53
+msgid ""
+"**SuperExec**: A long-running process that schedules, launches, and "
+"manages multiple application processes (e.g., ``ClientApp``) on demand by"
+" communicating with the SuperNode. By default, it is started "
+"automatically by the SuperNode."
+msgstr ""
+
+#: ../../source/explanation-flower-architecture.rst:56
+msgid ""
+"``ClientApp``: A short-lived app process containing project-specific code"
+" that customizes all client-side aspects of federated learning systems "
+"(local model training, evaluation, pre- and post-processing). This is the"
+" component AI researchers and engineers implement when building Flower "
+"apps."
+msgstr ""
+
+#: ../../source/explanation-flower-architecture.rst:61
 msgid ""
 "Why SuperNode and SuperLink? Well, in federated learning, the clients are"
 " the actual stars of the show. They hold the training data and they run "
 "the actual training. This is why Flower decided to name them "
 "**SuperNode**. The **SuperLink** is then responsible for acting as the "
-"`missing link` between all those SuperNodes."
+"*missing link* among all those SuperNodes."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:66
+#: ../../source/explanation-flower-architecture.rst:72
 #, fuzzy
 msgid "Basic Flower architecture"
 msgstr "Architecture florale"
 
-#: ../../source/explanation-flower-architecture.rst:66
+#: ../../source/explanation-flower-architecture.rst:72
 #, fuzzy
 msgid "The basic Flower architecture for federated learning."
 msgstr "Qu'est-ce que l'apprentissage fédéré ?"
 
-#: ../../source/explanation-flower-architecture.rst:68
+#: ../../source/explanation-flower-architecture.rst:74
 msgid ""
 "In a Flower app project, users will typically develop the ``ServerApp`` "
-"and the ``ClientApp``. All the network communication between `server` and"
-" `clients` is taken care of by the SuperLink and SuperNodes."
+"and the ``ClientApp``. All the network communication between *server* and"
+" *clients* is taken care of by the SuperLink and SuperNodes."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:74
+#: ../../source/explanation-flower-architecture.rst:80
 msgid ""
 "For more details, please refer to the |serverapp_link|_ and "
 "|clientapp_link|_ documentation."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:77
+#: ../../source/explanation-flower-architecture.rst:83
 msgid ""
-"With *multi-run*, multiple ``ServerApp``\\s and ``ClientApp``\\s are now "
-"capable of running on the same federation consisting of a single long-"
-"running SuperLink and multiple long-running SuperNodes. This is sometimes"
-" referred to as `multi-tenancy` or `multi-job`."
+"With *multi-run*, multiple ``ServerApp``\\s and ``ClientApp``\\s can run "
+"within the same federation, which consists of a single long-running "
+"SuperLink and multiple long-running SuperNodes. This capability is "
+"sometimes referred to as *multi-tenancy* or *multi-job*."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:82
+#: ../../source/explanation-flower-architecture.rst:87
 msgid ""
-"As shown in the figure below, two projects, each consisting of a "
-"``ServerApp`` and a ``ClientApp``, could share the same SuperLink and "
+"As shown in the figure below, two Flower App projects, each consisting of"
+" a ``ServerApp`` and a ``ClientApp``, could share the same SuperLink and "
 "SuperNodes."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:91
+#: ../../source/explanation-flower-architecture.rst:96
 #, fuzzy
-msgid "Multi-tenancy federated learning architecture"
+msgid "Multi-run federated learning architecture"
 msgstr "Stratégie de moyenne fédérée."
 
-#: ../../source/explanation-flower-architecture.rst:91
+#: ../../source/explanation-flower-architecture.rst:96
 #, fuzzy
-msgid "Multi-tenancy federated learning architecture with Flower"
+msgid "Multi-run federated learning architecture with Flower"
 msgstr "Étape 2 : Apprentissage fédéré avec Flower"
 
-#: ../../source/explanation-flower-architecture.rst:93
+#: ../../source/explanation-flower-architecture.rst:98
 msgid ""
 "To illustrate how multi-run works, consider one federated learning "
 "training run where a ``ServerApp`` and a ``ClientApp`` are participating "
@@ -5440,54 +5462,54 @@ msgid ""
 " is selected to participate in the training run."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:98
+#: ../../source/explanation-flower-architecture.rst:103
 msgid ""
 "In ``[run 1]`` below, all the SuperNodes are selected and therefore run "
 "their corresponding ``ClientApp``\\s:"
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:107
+#: ../../source/explanation-flower-architecture.rst:112
 #, fuzzy
 msgid "Multi-tenancy federated learning architecture - Run 1"
 msgstr "Stratégie de moyenne fédérée."
 
-#: ../../source/explanation-flower-architecture.rst:107
+#: ../../source/explanation-flower-architecture.rst:112
 msgid ""
 "Run 1 in a multi-run federated learning architecture with Flower. All "
 "SuperNodes participate in the training round."
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:110
+#: ../../source/explanation-flower-architecture.rst:115
 msgid ""
-"However, in ``[run 2]``, only the first and third SuperNodes are selected"
-" to participate in the training:"
+"However, in ``[run 2]``, only the first and second SuperNodes are "
+"selected to participate in the training:"
 msgstr ""
 
-#: ../../source/explanation-flower-architecture.rst:119
+#: ../../source/explanation-flower-architecture.rst:124
 #, fuzzy
 msgid "Multi-tenancy federated learning architecture - Run 2"
 msgstr "Stratégie de moyenne fédérée."
 
-#: ../../source/explanation-flower-architecture.rst:119
+#: ../../source/explanation-flower-architecture.rst:124
 msgid ""
 "Run 2 in a multi-run federated learning architecture with Flower. Only "
-"the first and third SuperNodes are selected to participate in the "
+"the first and second SuperNodes are selected to participate in the "
 "training round."
-msgstr ""
-
-#: ../../source/explanation-flower-architecture.rst:122
-msgid ""
-"Therefore, with Flower multi-run, different projects (each consisting of "
-"a ``ServerApp`` and ``ClientApp``) can run on different sets of clients."
 msgstr ""
 
 #: ../../source/explanation-flower-architecture.rst:127
 msgid ""
-"This explanation covers the Flower Deployment Engine. An explanation "
-"covering the Flower Simulation Engine will follow."
+"Therefore, with Flower multi-run, different Flower App projects can run "
+"on different sets of clients."
 msgstr ""
 
 #: ../../source/explanation-flower-architecture.rst:132
+msgid ""
+"This explanation covers the Flower Deployment Runtime. An explanation "
+"covering the Flower Simulation Runtime will follow."
+msgstr ""
+
+#: ../../source/explanation-flower-architecture.rst:137
 msgid ""
 "As we continue to enhance Flower at a rapid pace, we'll periodically "
 "update this explainer document. Feel free to share any feedback with us."
@@ -60188,5 +60210,116 @@ msgstr ""
 #~ " Communication <../ref-flower-network-"
 #~ "communication.html>`_ guide for further "
 #~ "details."
+#~ msgstr ""
+
+#~ msgid "A Flower `server` consists of **SuperLink** and ``ServerApp``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**SuperLink**: a long-running process "
+#~ "that forwards task instructions to "
+#~ "clients (SuperNodes) and receives task "
+#~ "results back."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``ServerApp``: a short-lived process "
+#~ "with project-spcific code that "
+#~ "customizes all server-side aspects of"
+#~ " federated learning systems (client "
+#~ "selection, client configuration, result "
+#~ "aggregation). This is what AI "
+#~ "researchers and AI engineers write when"
+#~ " they build Flower apps."
+#~ msgstr ""
+
+#~ msgid "A Flower `client` consists of **SuperNode** and ``ClientApp``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**SuperNode**: a long-running process "
+#~ "that connects to the SuperLink, asks "
+#~ "for tasks, executes tasks (for example,"
+#~ " \"train this model on your local "
+#~ "data\") and returns task results back"
+#~ " to the SuperLink."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``ClientApp``: a short-lived process "
+#~ "with project-specific code that "
+#~ "customizes all client-side aspects of"
+#~ " federated learning systems (local model"
+#~ " training and evaluation, pre- and "
+#~ "post-processing). This is what AI "
+#~ "researchers and AI engineers write when"
+#~ " they build Flower apps."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Why SuperNode and SuperLink? Well, in"
+#~ " federated learning, the clients are "
+#~ "the actual stars of the show. They"
+#~ " hold the training data and they "
+#~ "run the actual training. This is "
+#~ "why Flower decided to name them "
+#~ "**SuperNode**. The **SuperLink** is then "
+#~ "responsible for acting as the `missing"
+#~ " link` between all those SuperNodes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In a Flower app project, users "
+#~ "will typically develop the ``ServerApp`` "
+#~ "and the ``ClientApp``. All the network"
+#~ " communication between `server` and "
+#~ "`clients` is taken care of by the"
+#~ " SuperLink and SuperNodes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "With *multi-run*, multiple ``ServerApp``\\s"
+#~ " and ``ClientApp``\\s are now capable "
+#~ "of running on the same federation "
+#~ "consisting of a single long-running "
+#~ "SuperLink and multiple long-running "
+#~ "SuperNodes. This is sometimes referred "
+#~ "to as `multi-tenancy` or `multi-"
+#~ "job`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "As shown in the figure below, two"
+#~ " projects, each consisting of a "
+#~ "``ServerApp`` and a ``ClientApp``, could "
+#~ "share the same SuperLink and SuperNodes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "However, in ``[run 2]``, only the "
+#~ "first and third SuperNodes are selected"
+#~ " to participate in the training:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Run 2 in a multi-run federated "
+#~ "learning architecture with Flower. Only "
+#~ "the first and third SuperNodes are "
+#~ "selected to participate in the training"
+#~ " round."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Therefore, with Flower multi-run, "
+#~ "different projects (each consisting of a"
+#~ " ``ServerApp`` and ``ClientApp``) can run"
+#~ " on different sets of clients."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This explanation covers the Flower "
+#~ "Deployment Engine. An explanation covering "
+#~ "the Flower Simulation Engine will "
+#~ "follow."
 #~ msgstr ""
 
